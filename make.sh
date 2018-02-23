@@ -6,7 +6,7 @@ which javac >/dev/null || (echo "javac not found" && return 1) || return 1
 which jar >/dev/null || (echo "jar not found" && return 1) || return 1
 
 mkdir -p _build/_info
-find|grep "\.java$"|grep -v test>_build/java_files.txt
+find src/|grep "\.java$"|grep -v test>_build/java_files.txt
 javac -d _build @_build/java_files.txt
 cp README.md pom.xml _build/_info
 cd _build
